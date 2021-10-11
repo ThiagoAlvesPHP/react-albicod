@@ -6,6 +6,7 @@
   align-items: center;
   position: fixed;
   transition: all ease .3s;
+  z-index: 99;
   // left: -90px;
 
   .menu-left {
@@ -14,9 +15,10 @@
     justify-content: center;
     width: 90px;
     height: 100vh;
-    background-color: #022E78;
+    background-color: rgba(255,255,255,0.6);
     border-bottom-right-radius: 60px;
     border-top-right-radius: 60px;
+    box-shadow: 0px 0px 10px black;
 
     .icone {
       width: 50px;
@@ -31,6 +33,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      color: #000;
   
       &:hover {
         width: 70px;
@@ -51,6 +54,10 @@
         box-shadow: 0px 0px 0px black;
         transition: all ease .6s;
       }
+    }
+
+    .selected {
+      box-shadow: 0px 0px 10px #000;
     }
   }
 

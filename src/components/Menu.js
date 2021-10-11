@@ -7,58 +7,61 @@ import {
   AiFillSetting, 
   AiFillPhone
 } from "react-icons/ai";
-import { FaAngleRight } from 'react-icons/fa';
 
 // file scss
 import "./Menu.scss";
 
 const Menu = (props) => {
+  //const traduction
+  const { t } = props.translation();
+
+  function actionMenu(menu) {
+    document.querySelectorAll('.icone').forEach(el => {
+      el.classList.remove('selected');
+    });
+    document.querySelector(`.${menu}`).classList.add('selected');
+  }
   
   return (
       <>
         <div className="menu">
             <div className="menu-left">
-              <Link to="/">
-                <div className="icone" title="Home">
+              <Link to="/" onClick={()=>actionMenu('action-1')}>
+                <div className="icone action-1 selected" title={t('Home')}>
                   <div className="icn" >
                     <AiFillHome />
                   </div>
                 </div>
               </Link>
-              <Link to="/about">
-                <div className="icone" title="About">
+              <Link to="/about" onClick={()=>actionMenu('action-2')}>
+                <div className="icone action-2" title={t('About')}>
                   <div className="icn">
                     <AiFillInfoCircle />
                   </div>
                 </div>
               </Link>
-              <Link to="/projects">
-              <div className="icone" title="Portfolio">
-                <div className="icn">
-                  <AiTwotoneFolderOpen />
+              <Link to="/projects" onClick={()=>actionMenu('action-3')}>
+                <div className="icone action-3" title={t('Projects')}>
+                  <div className="icn">
+                    <AiTwotoneFolderOpen />
+                  </div>
                 </div>
-              </div>
               </Link>
-              <Link to="/services">
-              <div className="icone" title="Service">
-                <div className="icn">
-                  <AiFillSetting />
+              <Link to="/services" onClick={()=>actionMenu('action-4')}>
+                <div className="icone action-4" title={t('Service')}>
+                  <div className="icn">
+                    <AiFillSetting />
+                  </div>
                 </div>
-              </div>
               </Link>
-              <Link to="/contact">
-              <div className="icone" title="Contact">
-                <div className="icn">
-                  <AiFillPhone />
+              <Link to="/contact" onClick={()=>actionMenu('action-5')}>
+                <div className="icone action-5" title={t('Contact')}>
+                  <div className="icn">
+                    <AiFillPhone />
+                  </div>
                 </div>
-              </div>
               </Link>
             </div>
-            {/* <div className="menu-right">
-              <div className="button-visible-menu" title="Menu">
-                <FaAngleRight />
-              </div>
-            </div> */}
         </div>
       </>
   );

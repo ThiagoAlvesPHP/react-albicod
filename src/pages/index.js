@@ -4,6 +4,9 @@ import Contact from './Contact';
 import Projects from './Projects';
 import Services from './Services';
 
+//File CSS
+import './assets/css/general.scss'
+
 export {
   Home,
   About,
